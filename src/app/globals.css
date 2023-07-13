@@ -2,26 +2,282 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #1d2233;
+}
+
+.Main {
+  display: flex;
+}
+
+.layout-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(20, 21, 26, 0.8);
+  backdrop-filter: blur(5px);
+  padding: 7px;
+}
+
+.layout-header img {
+  width: 35px;
+  height: 35px;
+  margin-left: 4rem;
+}
+
+.layout-header h2 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-bottom: 0;
+  letter-spacing: 2.5px;
+  font-family: "Roboto", sans-serif;
+}
+
+.horizontal-line {
+  height: 2.5px;
+  background-image: linear-gradient(
+    to right,
+    rgb(246, 41, 124),
+    rgb(95, 125, 248),
+    rgb(105, 212, 193)
+  );
+  border: none;
+}
+
+body {
+  margin: 0;
+}
+
+.main-hero {
+  padding: 5.2rem;
+  margin: 10px;
+  line-height: 9.5vh;
+  flex: 50%;
+  
+}
+/* .line-break {
+  display: block;
+  line-height: 1rem;
+} */
+
+.build {
+  font-weight: bold;
+  color: #bd1052;
+  font-size: 80px;
+}
+.test {
+  font-weight: bold;
+  color: #545ffd;
+  font-size: 80px;
+}
+
+.and {
+  font-weight: bold;
+  color: #a2a2a2;
+  font-size: 80px;
+}
+.execute {
+  font-weight: bold;
+  color:#019267;
+  font-size: 80px;
+}
+.your {
+  font-weight: bold;
+  color: #019267;
+  font-size: 80px;
+}
+
+.ideas {
+  font-weight: bold;
+  color: #019267;
+  font-size: 80px;
+}
+.with {
+  font-weight: bold;
+  color: #a2a2a2;
+  font-size: 80px;
+}
+
+.our {
+  font-weight: bold;
+  color: #a2a2a2;
+  font-size: 80px;
+}
+
+.innovative {
+  font-weight: bold;
+  color: #F1AE50;
+  font-size: 80px;
+}
+.solutions {
+  font-weight: bold;
+  color: #F1AE50;
+  font-size: 80px;
+}
+.end{
+  font-weight: bold;
+  color: #545ffd;
+  font-size: 80px;
+}
+.background-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 20%, transparent 20%),
+    radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 20%, transparent 20%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 100% 20px, 20px 100%;
+  background-position: -10px -10px, -10px -10px, 0 0, 0 0;
+}
+
+.container{
+height: 60vh;
+width: 30vw;
+position: absolute;
+top: 50vh;
+left: 50vw;
+transform: translate(35%, -30%);
+perspective: 1000px;
+
+}
+.box{
+
+height: 250px;
+width: 250px;
+position: absolute;
+top: 100px;
+left: 100px;
+/* transform: rotate(-90deg); */
+transform-style: preserve-3d;
+
+animation: animate 4s infinite;
+
+}
+@keyframes animate {
+  0%{transform: rotateX(45deg) rotateY(-45deg);}
+  25%{transform: rotateX(-45deg) rotateY(-45deg);}
+  50%{transform: rotateX(45deg) rotateY(45deg);}
+  75%{transform: rotateX(-45deg) rotateY(45deg);}
+  100%{transform: rotateX(45deg) rotateY(-45deg);}
+}
+.card {
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  padding: 100px 0px;
+  color: white;
+  background-image: url('../../public/assets/logo.png');
+  background-size: cover;
+  background-position: center;
+  border: 25px solid #000030;
+  box-sizing: border-box;
+  position: absolute;
+
+}
+
+#front{
+transform: translateZ(125px);
+
+
+}
+#back{
+  transform: translateZ(-125px);
+  
+  
+  }
+#left{
+
+  right:125px;
+  transform: rotateY(-90deg);
+}
+#right{
+
+  left:125px;
+  transform: rotateY(90deg);
+}
+#bottom{
+
+  top:125px;
+  transform: rotateX(90deg);
+}
+
+#top{
+
+  bottom:125px;
+  transform: rotateX(-90deg);
+}
+.cardborder{
+  border: 5px solid white;
+}
+.Last {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 100px;
+  /* Add margin-bottom for spacing between buttons */
+  margin-bottom: 100px;
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #075E54;
+  color: white;
+  padding: 10px 80px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  border: 3px solid #075E54 ;
+}
+
+.whatsapp-button:hover {
+  opacity: 0.8;
+}
+
+.whatsapp-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.Services-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1D2233;
+  color: white;
+  padding: 10px 80px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  border: 3px solid skyblue;
+  margin-left: 30px;
+}
+
+.Services-button:hover {
+  opacity: 0.8;
+  border-image: linear-gradient(to right, #FF4400, #0077FF, #87CEEB) 1;
+  border-radius: 4px;
 }
